@@ -109,6 +109,7 @@ contract Link {
         require(linkIndex < userLinks[_seller].length, "Link not found");
 
         // Get the link price from the seller
+        // Work upon adding dynamic pricing
         uint256 linkPrice = 2 ether; // Set the link price here (2 ether as an example)
         require(msg.value >= linkPrice, "Insufficient funds");
 
@@ -123,7 +124,7 @@ contract Link {
 
         // If the owners are 2 or more than 2 then we split
         if (numberOwner >= 2) {
-            // Calculate the distribution amount (25% of the link price)
+            // Calculate the distribution amount (50% of the link price)
             uint256 distributionAmount = (linkPrice * 50) / 100;
 
             // Calculate the amount to be sent to the seller (90% of the link price)
